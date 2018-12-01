@@ -12,7 +12,6 @@ class UserRepo extends Component {
     super(props);
 
     this.state = {
-      pageNumber: 1,
       repoTypeSelected: "all",
       repoLanguageSelected: "all",
       repoType: [
@@ -62,8 +61,6 @@ class UserRepo extends Component {
     // this.resetThenSet = this.resetThenSet.bind(this);
   }
 
-  url = "";
-
   languageColors = {
     javascript: "#f1e05a",
     css: "#563d7c",
@@ -73,16 +70,14 @@ class UserRepo extends Component {
   componentDidMount() {
     // this.fetchData("https://api.github.com/users/supreetsingh247");
     this.props.fetchUserRepos(
-      `https://api.github.com/users/${this.props.userName}/repos?page=${
-        this.state.pageNumber
-      }&per_page=15`
+      `https://api.github.com/users/${
+        this.props.userName
+      }/repos?page=1&per_page=15`
     );
   }
 
   componentWillReceiveProps(nextProps, prevState) {
     // If data is available from server then store
-
-    // console.log(nextProps.userRepos.isLoading);
     if (!nextProps.userRepos.isLoading) {
       // Get all languages this user's repos have
       // console.log("data has been loaded");
@@ -118,7 +113,7 @@ class UserRepo extends Component {
 
       // Finally store all repo and language dropdown by updating its states for search and filter
 
-      if (this.state.repoLanguage.length === 1) {
+      if (nextProps.userRepos.repos.length > 0) {
         this.setState({
           ...this.state,
           repos: nextProps.userRepos.repos,
@@ -379,6 +374,7 @@ class UserRepo extends Component {
     }
   };
 
+  // Main Render function
   render() {
     if (this.props.userRepos.isLoading) {
       return <UserRepoPlaceholder />;
