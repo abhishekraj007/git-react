@@ -37,7 +37,7 @@ class UserDetails extends Component {
     }
     return (
       <div className="user-profile">
-        <div className="user-profile-header">
+        <div className="user-profile-header mb-4">
           {this.renderProfileImage()}
           <div>
             <h2 className="user-profile-name">

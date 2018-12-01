@@ -113,10 +113,19 @@ class UserRepo extends Component {
 
       // Finally store all repo and language dropdown by updating its states for search and filter
 
+      // Update state repos and languages differently for pagination
+      // Update states repo
       if (nextProps.userRepos.repos.length > 0) {
         this.setState({
           ...this.state,
-          repos: nextProps.userRepos.repos,
+          repos: nextProps.userRepos.repos
+        });
+      }
+
+      // Update repo language dropdown
+      if (this.state.repoLanguage.length === 1) {
+        this.setState({
+          ...this.state,
           repoLanguage: uniqueRepoLanguage
         });
       }
