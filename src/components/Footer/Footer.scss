@@ -1,0 +1,44 @@
+@import "../../styles/variables";
+
+.footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+
+  @media (min-width: $md) {
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+  }
+}
+
+.footer-nav {
+  @media (min-width: $md) {
+    display: flex;
+  }
+
+  @media (max-width: $mobile-only) {
+    width: 50%;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+
+    @media (min-width: $md) {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.footer-logo {
+  font-size: 24px;
+
+  @media (max-width: $mobile-only) {
+    text-align: center;
+    margin: 1rem 0;
+    width: 100%;
+    order: 1;
+  }
+}

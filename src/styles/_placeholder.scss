@@ -1,0 +1,82 @@
+.placeholder {
+  position: static;
+  overflow: hidden;
+  animation: placeholderShimmer 2s linear;
+  animation-iteration-count: infinite;
+  background-color: #fff;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(0, 0, 0, 0.08)),
+    color-stop(15%, rgba(0, 0, 0, 0.15)),
+    color-stop(30%, rgba(0, 0, 0, 0.08))
+  );
+  background-size: 1200px 100%;
+  max-width: 30rem;
+
+  .image {
+    height: 0;
+    overflow: hidden;
+    padding-top: 100%;
+  }
+
+  .content {
+    min-height: 94px;
+  }
+
+  .line {
+    position: relative;
+    height: 0.8rem;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+
+    &::after,
+    &::before {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      content: "";
+      background-color: inherit;
+      height: 0.5rem;
+      width: 50%;
+    }
+
+    &:nth-child(1) {
+      &::after,
+      &::before {
+        width: 20%;
+      }
+    }
+
+    &:nth-child(2) {
+      &::after,
+      &::before {
+        width: 30%;
+      }
+    }
+
+    &:nth-child(3) {
+      &::after,
+      &::before {
+        width: 40%;
+      }
+    }
+
+    &.short {
+      &::after,
+      &::before {
+        width: 50% !important;
+      }
+    }
+  }
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}

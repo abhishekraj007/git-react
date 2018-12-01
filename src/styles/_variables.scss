@@ -1,0 +1,36 @@
+/* Device sizes */
+
+$mobile-only: 767px;
+$md: 768px;
+$tablet: 991px;
+$lg: 992px;
+$xlg: 1024px;
+
+/* Colors */
+$color-primary: #24292e;
+$color-accent: #e36209;
+$color-gray: #586069;
+$border: rgba(0, 0, 0, 0.1);
+
+/* Links */
+$color-link: #0366d6;
+
+/* Text */
+$text-primary: #333333;
+$text-secondary: #666666;
+$text-tertiary: #999999;
+
+/* Button */
+$button-bg: #eff3f6;
+$button-bg-hover: darken($button-bg, 5%);
+$button-border: rgba(27, 31, 35, 0.35);
+
+/* Dropdown */
+$dropdown-label-bg: #f6f8fa;
+
+/* Tabs */
+$tab-active-border: #e36209;
+
+/* Counter */
+$counter-bg: rgba(27, 31, 35, 0.08);
+$counter-text: #586069;

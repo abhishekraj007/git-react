@@ -1,0 +1,154 @@
+@import "../../styles/variables";
+
+$header-bg: #24292e;
+$header-text-color: #ffffff;
+$nav-bar: rgba(#ffffff, 0.7);
+$nav-link: #ffffff;
+
+.header {
+  background-color: $header-bg;
+  padding: 12px 0;
+  color: $header-text-color;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+}
+
+.header-logo {
+  @media (max-width: $tablet) {
+    position: relative;
+    left: 50%;
+    transform: translateX(-40px);
+  }
+
+  &__img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.nav-toggler {
+  cursor: pointer;
+  @media (min-width: $lg) {
+    display: none;
+  }
+
+  &__bar {
+    width: 24px;
+    height: 3px;
+    background-color: $nav-bar;
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.header-nav {
+  @media (max-width: $tablet) {
+    display: none;
+    flex-direction: column;
+    background-color: $header-bg;
+    position: fixed;
+    width: 100%;
+    top: 54px;
+    left: 0;
+    padding: 1rem;
+    z-index: 11;
+
+    &.show {
+      display: flex;
+    }
+  }
+
+  @media (min-width: $lg) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.nav-left,
+.nav-right {
+  @media (min-width: $lg) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav-list {
+  @media (min-width: $lg) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav-item {
+  padding: 0.4rem 0;
+  @media (min-width: $lg) {
+    display: inline-flex;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.nav-link {
+  color: $nav-link;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0;
+  // display: block;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: $lg) {
+    padding: 0;
+  }
+
+  &:hover {
+    color: rgba($nav-link, 0.75);
+  }
+}
+
+.header-search {
+  margin-bottom: 1rem;
+  @media (min-width: $lg) {
+    margin: 0 1rem;
+  }
+
+  &__input {
+    width: 100%;
+    transition: all 0.3s;
+    background-color: rgba(#ffffff, 0.1);
+    color: #999 !important;
+    min-width: 300px;
+
+    &:focus {
+      background-color: #ffffff;
+      color: $text-primary !important;
+    }
+  }
+}
+
+.user-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.nav-icon {
+  width: 28px;
+  height: 28px;
+
+  @media (min-width: $lg) {
+    width: 16px;
+    height: 16px;
+  }
+}

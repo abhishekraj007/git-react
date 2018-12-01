@@ -1,0 +1,19 @@
+/* Links */
+@import "variables";
+
+a {
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.link {
+  color: $color-link;
+}
+
+.link-plain {
+  color: $text-secondary;
+
+  &:hover {
+    color: $color-link;
+  }
+}

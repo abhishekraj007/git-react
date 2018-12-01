@@ -1,0 +1,25 @@
+/* Button */
+@import "variables";
+
+.button {
+  background-color: $button-bg;
+  border: 1px solid $button-border;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  appearance: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: $button-bg-hover;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+}

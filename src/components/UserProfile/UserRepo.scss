@@ -1,0 +1,49 @@
+/* User Repo */
+@import "../../styles/variables";
+
+.user-repo-list {
+  margin-top: 1rem !important;
+}
+
+.user-repo-item {
+  border-bottom: 1px solid $border;
+  padding: 1rem 0;
+
+  &:first-child {
+    border-top: 1px solid $border;
+  }
+}
+
+.repo-search-form {
+  flex: 1;
+  margin-bottom: 1rem;
+
+  @media (min-width: $md) {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $lg) {
+    margin-right: 2rem;
+  }
+}
+
+.user-repo-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.repo-actions {
+  justify-content: space-between;
+  border-bottom: 1px solid $border;
+  padding-bottom: 1rem;
+  flex-direction: column;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+  }
+}
+
+.repo-search-info {
+  margin: 1rem 0;
+}
